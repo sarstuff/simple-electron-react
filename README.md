@@ -56,6 +56,12 @@ rm -rf ~/.wine
 edit "node_modules/rcedit/lib/rcedit.js", change "wine" to "wine64" at line 42
 download "https://github.com/electron/rcedit/releases/download/v1.1.1/rcedit-x64.exe", rename to "rcedit.exe" and replace "node_modules/rcedit/bin/rcedit.exe"
 ````
+also getting the correct icon for Mac Builds, the --asar tag helps hide the archive code
+
+````
+"electron-packager ./ --out=./release-builds --asar --overwrite --platform=darwin --arch=x64 --icon=assets/icon.icns"
+
+````
 #### Test the app (after `npm run build` || `yarn run build`)
 
 ```
