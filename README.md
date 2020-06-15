@@ -48,18 +48,14 @@ or
 yarn package
 ```
 
-#### Build the app (manual)
-
-```
-npm run build
-```
-
-or
-
-```
-yarn build
-```
-
+#### when building on Mac,
+there can be build problems with Catalina and 32bit apps
+````
+brew upgrade wine, make sure "/usr/local/bin/wine64" exist
+rm -rf ~/.wine
+edit "node_modules/rcedit/lib/rcedit.js", change "wine" to "wine64" at line 42
+download "https://github.com/electron/rcedit/releases/download/v1.1.1/rcedit-x64.exe", rename to "rcedit.exe" and replace "node_modules/rcedit/bin/rcedit.exe"
+````
 #### Test the app (after `npm run build` || `yarn run build`)
 
 ```
